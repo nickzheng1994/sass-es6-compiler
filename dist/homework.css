@@ -1,0 +1,152 @@
+@import url(./../source/fonts.css);
+* {
+  margin: 0;
+  padding: 0; }
+
+img {
+  border: none; }
+
+html {
+  height: 100%;
+  font-size: 62.5%; }
+
+@media only screen and (min-width: 320px) {
+  html {
+    font-size: 62.5% !important; } }
+
+@media only screen and (min-width: 640px) {
+  html {
+    font-size: 125% !important; } }
+
+@media only screen and (min-width: 750px) {
+  html {
+    font-size: 150% !important; } }
+
+@media only screen and (min-width: 1242px) {
+  html {
+    font-size: 187.5% !important; } }
+
+div {
+  box-sizing: border-box; }
+
+body {
+  min-height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  overflow: hidden; }
+  body > * {
+    box-sizing: border-box; }
+  body .wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column; }
+
+.top-title {
+  background: #ffffff;
+  width: 100%;
+  height: 2.1rem;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4); }
+  .top-title .center {
+    width: 1024px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative; }
+    .top-title .center .logo {
+      height: 1.06rem; }
+    .top-title .center .head {
+      width: 1rem;
+      height: 1rem;
+      position: absolute;
+      right: 0.3rem;
+      top: 0.5rem;
+      border-radius: 50%; }
+
+.bottom-content {
+  width: 100%;
+  flex: 1;
+  background: #f3f3f3;
+  display: flex;
+  flex-direction: row;
+  justify-content: center; }
+  .bottom-content .content {
+    display: flex;
+    width: 1024px;
+    overflow: hidden; }
+    .bottom-content .content .right-content {
+      width: 9rem;
+      background-color: #2d4054;
+      font-size: 14px;
+      padding: 30px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
+      .bottom-content .content .right-content .menu {
+        width: 100%;
+        color: #fff;
+        font-size: 14px; }
+        .bottom-content .content .right-content .menu .menu-item {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 20px; }
+          .bottom-content .content .right-content .menu .menu-item > img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px; }
+          .bottom-content .content .right-content .menu .menu-item > div {
+            overflow: hidden;
+            width: 100px; }
+      .bottom-content .content .right-content .history {
+        color: #999;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        margin-top: 15px; }
+        .bottom-content .content .right-content .history > .history-list {
+          text-align: center; }
+    .bottom-content .content .left-content {
+      flex: 1;
+      padding: 20px;
+      display: flex;
+      flex-direction: column; }
+      .bottom-content .content .left-content .top {
+        width: 100%;
+        height: 120px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center; }
+        .bottom-content .content .left-content .top > div {
+          flex: 1;
+          height: 100%; }
+        .bottom-content .content .left-content .top > div:not(.others) {
+          margin-right: 20px; }
+        .bottom-content .content .left-content .top .building {
+          background-color: #ffb900; }
+        .bottom-content .content .left-content .top .idle {
+          background-color: #7fbc39; }
+        .bottom-content .content .left-content .top .others {
+          background-color: #fff;
+          padding: 25px; }
+      .bottom-content .content .left-content .center {
+        width: 100%;
+        height: 50px;
+        background-color: #fff;
+        margin: 20px 0; }
+      .bottom-content .content .left-content .bottom {
+        flex: 1; }
+        .bottom-content .content .left-content .bottom .card {
+          width: 100%;
+          height: 110px;
+          background-color: #fff;
+          margin-bottom: 20px;
+          color: #00b4cf;
+          font-size: 16px; }

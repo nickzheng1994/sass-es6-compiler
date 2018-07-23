@@ -1,22 +1,42 @@
-const chokidar = require('chokidar')
-const babel = require('babel-core')
+const chokidar = require('chokidar');
+const babel = require('babel-core');
 const sass = require('node-sass');
+const gulp = require('gulp');
+const livereload = require('gulp-livereload');
 const options = {
   presets: ['es2015']
-}
+};
 const fs = require('fs');
 
 function babelCompiler(path){
-    const file = readFile(path);
-    const es5Code = babel.transform(file,options).code;
-    fs.writeFileSync('./dist/test.js',es5Code)
+    try{
+        const file = readFile(path);
+        const es5Code = babel.transform(file,options).code;
+        fs.writeFileSync('./dist/homework.js',es5Code)
+    }catch(err){
+        console.log(err)
+    }
 }
 function scssCompiler(path){
     const file = readFile(path);
-    let result = sass.renderSync({
-        data: file
-    }).css;
-    fs.writeFileSync('./dist/test.css',result)
+    try{
+        let result = sass.renderSync({
+            data: file
+        }).css;
+        fs.writeFileSync('./dist/homework.css',result)
+    }catch(err) {
+        console.log(err)
+    }
+}
+
+function htmlCompiler(path){
+    const file = readFile(path);
+    try{
+        fs.writeFileSync('./dist/homework.html',file)
+    }catch(err) {
+        console.log(err)
+    }
+   
 }
 
 function readFile(path){
@@ -33,6 +53,18 @@ chokidar
             babelCompiler(path)
         }else if(path.match(/.scss/)){
             scssCompiler(path);
+        }else if(path.match(/.html/)){
+            htmlCompiler(path)
         }
     }
   })
+
+gulp.task('watch',function(){
+    gulp.task('watch',function () {
+        livereload.listen();    
+        gulp.watch('homework/*.*',function(file){
+            livereload.changed(file.path);
+        });
+    });
+})
+gulp.task('default',['watch'])
